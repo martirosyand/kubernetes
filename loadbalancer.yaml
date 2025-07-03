@@ -1,0 +1,13 @@
+# loadbalancer.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-petclinic-lb
+spec:
+  selector:
+    app: spring-petclinic
+  ports:
+    - port: 80
+      targetPort: 8080
+  type: LoadBalancer
+
