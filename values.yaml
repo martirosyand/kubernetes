@@ -18,9 +18,13 @@ resources:
 livenessProbe:
   path: /actuator/health/liveness
   port: 8080
+  initialDelaySeconds: 60
+  periodSeconds: 10
 readinessProbe:
   path: /actuator/health/readiness
   port: 8080
+  initialDelaySeconds: 60
+  periodSeconds: 5
 
 ingress:
   enabled: true
